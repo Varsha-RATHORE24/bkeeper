@@ -1,33 +1,23 @@
 package com.tericcabrel.authapi.responses;
 
-public class LoginResponse {
-    private String token;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+@ToString
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class LoginResponse extends BaseResponse {
+    private Object data;
 
-    private long expiresIn;
+	public Object getData() {
+		return data;
+	}
 
-    public String getToken() {
-        return token;
-    }
+	public void setData(Object data) {
+		this.data = data;
+	}
 
-    public LoginResponse setToken(String token) {
-        this.token = token;
-        return this;
-    }
 
-    public long getExpiresIn() {
-        return expiresIn;
-    }
-
-    public LoginResponse setExpiresIn(long expiresIn) {
-        this.expiresIn = expiresIn;
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        return "LoginResponse{" +
-                "token='" + token + '\'' +
-                ", expiresIn=" + expiresIn +
-                '}';
-    }
 }
